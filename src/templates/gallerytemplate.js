@@ -24,6 +24,8 @@ const EventImage = styled(Img)`
 `
 
 const EventImageCaption = styled.p`
+  color: #fefefe;
+  font-family: sans-serif;
   font-weight: 600;
   font-size: 20px;
   margin-top: 5px;
