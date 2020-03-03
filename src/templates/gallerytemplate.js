@@ -18,7 +18,7 @@ const EventGalleryGrid = styled.ul`
 const EventGalleryListingItem = styled.li`
   list-style: none;
   /* max-width: 320px; */
-  width: 400px;
+  width: 300px;
   margin: 0 auto 2rem;
 `
 
