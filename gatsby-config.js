@@ -36,7 +36,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Emma Gates`,
-        short_name: `Flower Club`,
+        short_name: `Emma Gates`,
         start_url: `/`,
         background_color: `#fefefe`,
         theme_color: `#fefefe`,

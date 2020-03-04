@@ -2,18 +2,31 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import Carousel from "@brainhubeu/react-carousel"
+import "@brainhubeu/react-carousel/lib/style.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
+// import ArrowLeft from "../images/arrow-left.svg"
+// import ArrowRight from "../images/arrow-right.svg"
 
-const EventGalleryGrid = styled.ul`
-  align-items: flex-start;
-  display: flex;
-  /* flex-direction: column; */
-  padding: 2rem 0;
-  flex-wrap: wrap;
-`
+const ArrowLeft = () => (
+  <svg
+    width="24"
+    height="40"
+    viewBox="0 0 24 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M22.8284 33.1716C24.3905 34.7337 24.3905 37.2663 22.8284 38.8284C21.2663 40.3905 18.7337 40.3905 17.1716 38.8284L1.17157 22.8284C-0.390524 21.2663 -0.390524 18.7337 1.17157 17.1716L17.1716 1.17157C18.7337 -0.390524 21.2663 -0.390524 22.8284 1.17157C24.3905 2.73367 24.3905 5.26633 22.8284 6.82843L9.65685 20L22.8284 33.1716Z"
+      fill="#FEFEFE"
+    />
+  </svg>
+)
 
 const EventGalleryListingItem = styled.li`
   list-style: none;
@@ -23,8 +36,8 @@ const EventGalleryListingItem = styled.li`
 `
 
 const EventImage = styled(Img)`
-  margin: 0 5px;
-  width: 100%;
+  max-height: 500px;
+  min-width: 500px;
 `
 
 const EventImageCaption = styled.p`
@@ -41,14 +54,22 @@ const GalleryTemplate = ({ data, pageContext }) => {
     <Layout>
       <SEO title="Gallery" keywords={[`Emma Gates`, `Pictures`]} />
       <PageHeader pagetitle={collection} />
-      <EventGalleryGrid>
+      <Carousel
+        arrowLeft={<ArrowLeft />}
+        // arrowLeftDisabled={<Icon name="angle-left" />}
+        arrowRight={<ArrowRight />}
+        // arrowRightDisabled={<Icon name="angle-right" />}
+        addArrowClickHandler
+        // arrows
+        infinite
+      >
         {data.allContentfulImage.edges.map((edge, i) => (
-          <EventGalleryListingItem key={i}>
+          <div key={i}>
             <EventImage fluid={edge.node.image.fluid} alt={edge.node.caption} />
             <EventImageCaption>{edge.node.image.description}</EventImageCaption>
-          </EventGalleryListingItem>
+          </div>
         ))}
-      </EventGalleryGrid>
+      </Carousel>
     </Layout>
   )
 }
