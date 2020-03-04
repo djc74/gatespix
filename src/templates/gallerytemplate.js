@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import Carousel, { Dots } from "@brainhubeu/react-carousel"
+import "@brainhubeu/react-carousel/lib/style.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -20,10 +22,12 @@ const EventGalleryListingItem = styled.li`
   min-width: 70%;
   height: 500px;
   margin: 0 auto 2rem;
+  overflow: hidden;
 `
 
 const EventImage = styled(Img)`
-  margin: 0 5px;
+  max-height: 500px;
+  min-width: 500px;
 `
 
 const EventImageCaption = styled.p`
@@ -40,14 +44,14 @@ const GalleryTemplate = ({ data, pageContext }) => {
     <Layout>
       <SEO title="Gallery" keywords={[`Emma Gates`, `Pictures`]} />
       <PageHeader pagetitle={collection} />
-      <EventGalleryGrid>
+      <Carousel arrows>
         {data.allContentfulImage.edges.map((edge, i) => (
-          <EventGalleryListingItem key={i}>
+          <div key={i}>
             <EventImage fluid={edge.node.image.fluid} alt={edge.node.caption} />
             <EventImageCaption>{edge.node.image.description}</EventImageCaption>
-          </EventGalleryListingItem>
+          </div>
         ))}
-      </EventGalleryGrid>
+      </Carousel>
     </Layout>
   )
 }
