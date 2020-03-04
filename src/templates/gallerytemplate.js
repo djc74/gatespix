@@ -10,21 +10,20 @@ import PageHeader from "../components/pageheader"
 const EventGalleryGrid = styled.ul`
   align-items: flex-start;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   padding: 2rem 0;
   flex-wrap: wrap;
 `
 
 const EventGalleryListingItem = styled.li`
   list-style: none;
-  /* max-width: 320px; */
-  width: 400px;
+  min-width: 70%;
+  height: 500px;
   margin: 0 auto 2rem;
 `
 
 const EventImage = styled(Img)`
   margin: 0 5px;
-  width: 100%;
 `
 
 const EventImageCaption = styled.p`
