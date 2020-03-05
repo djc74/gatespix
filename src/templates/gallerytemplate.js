@@ -82,11 +82,8 @@ const GalleryTemplate = ({ data, pageContext }) => {
       <PageHeader pagetitle={collection} />
       <Carousel
         arrowLeft={<ArrowLeft />}
-        // arrowLeftDisabled={<Icon name="angle-left" />}
         arrowRight={<ArrowRight />}
-        // arrowRightDisabled={<Icon name="angle-right" />}
         addArrowClickHandler
-        // arrows
         infinite
       >
         {data.allContentfulImage.edges.map((edge, i) => (
