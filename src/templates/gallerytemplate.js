@@ -28,12 +28,12 @@ const ArrowLeft = () => (
   </svg>
 )
 
-const EventGalleryListingItem = styled.li`
-  list-style: none;
-  /* max-width: 320px; */
-  width: 300px;
-  margin: 0 auto 2rem;
-`
+// const EventGalleryListingItem = styled.li`
+//   list-style: none;
+//   /* max-width: 320px; */
+//   width: 300px;
+//   margin: 0 auto 2rem;
+// `
 
 const EventImage = styled(Img)`
   max-height: 500px;
