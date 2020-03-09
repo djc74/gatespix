@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.12.15",
+    "@brainhubeu/react-carousel": "^1.12.9-alpha",
     "babel-plugin-styled-components": "^1.10.6",
     "dotenv": "^6.2.0",
     "gatsby": "^2.13.33",
@@ -25,7 +25,6 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.3.2",
-    "typeface-libre-baskerville": "0.0.72",
     "typeface-open-sans": "0.0.54"
   },
   "devDependencies": {
