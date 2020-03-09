@@ -41,7 +41,7 @@ module.exports = {
         background_color: `#fefefe`,
         theme_color: `#fefefe`,
         display: `standalone`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/EG-logo.png`,
         include_favicon: true,
       },
     },
