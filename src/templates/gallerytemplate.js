@@ -28,38 +28,22 @@ const ArrowLeft = () => (
   </svg>
 )
 
-const ArrowRight = () => (
-  <svg
-    width="24"
-    height="40"
-    viewBox="0 0 24 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M1.17157 6.82843C-0.390524 5.26633 -0.390524 2.73367 1.17157 1.17157C2.73367 -0.390524 5.26633 -0.390524 6.82843 1.17157L22.8284 17.1716C24.3905 18.7337 24.3905 21.2663 22.8284 22.8284L6.82843 38.8284C5.26633 40.3905 2.73367 40.3905 1.17157 38.8284C-0.390524 37.2663 -0.390524 34.7337 1.17157 33.1716L14.3431 20L1.17157 6.82843Z"
-      fill="#FEFEFE"
-    />
-  </svg>
-)
-
-// const EventGalleryGrid = styled.ul`
-//   align-items: flex-start;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 2rem 0;
-//   flex-wrap: wrap;
-// `
-
-// const EventGalleryListingItem = styled.li`
-//   list-style: none;
-//   min-width: 70%;
-//   height: 500px;
-//   margin: 0 auto 2rem;
-//   overflow: hidden;
-// `
+// const ArrowRight = () => (
+//   <svg
+//     width="24"
+//     height="40"
+//     viewBox="0 0 24 40"
+//     fill="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//   >
+//     <path
+//       fillRule="evenodd"
+//       clipRule="evenodd"
+//       d="M1.17157 6.82843C-0.390524 5.26633 -0.390524 2.73367 1.17157 1.17157C2.73367 -0.390524 5.26633 -0.390524 6.82843 1.17157L22.8284 17.1716C24.3905 18.7337 24.3905 21.2663 22.8284 22.8284L6.82843 38.8284C5.26633 40.3905 2.73367 40.3905 1.17157 38.8284C-0.390524 37.2663 -0.390524 34.7337 1.17157 33.1716L14.3431 20L1.17157 6.82843Z"
+//       fill="#FEFEFE"
+//     />
+//   </svg>
+// )
 
 const EventImage = styled(Img)`
   max-height: 500px;
@@ -82,7 +66,22 @@ const GalleryTemplate = ({ data, pageContext }) => {
       <PageHeader pagetitle={collection} />
       <Carousel
         arrowLeft={<ArrowLeft />}
-        arrowRight={<ArrowRight />}
+        arrowRight={
+          <svg
+            width="24"
+            height="40"
+            viewBox="0 0 24 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1.17157 6.82843C-0.390524 5.26633 -0.390524 2.73367 1.17157 1.17157C2.73367 -0.390524 5.26633 -0.390524 6.82843 1.17157L22.8284 17.1716C24.3905 18.7337 24.3905 21.2663 22.8284 22.8284L6.82843 38.8284C5.26633 40.3905 2.73367 40.3905 1.17157 38.8284C-0.390524 37.2663 -0.390524 34.7337 1.17157 33.1716L14.3431 20L1.17157 6.82843Z"
+              fill="#FEFEFE"
+            />
+          </svg>
+        }
         addArrowClickHandler
         infinite
       >
