@@ -14,27 +14,46 @@ const GalleryGrid = styled.section`
   grid-auto-flow: dense;
 `
 
-const GalleryListingItem = styled.div`
-  background: #fefefe;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-  list-style: none;
-  transition: 1s all;
+const GalleryGridLink = styled(Link)`
   grid-column: ${props => props.gridColumn || "span 1"};
   grid-row: ${props => props.gridRow || "span 1"};
-  :hover {
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.4);
-    transform: scale(1.01);
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  h2 {
+    position: absolute;
+    background-color: #fefefe;
+    padding: 20px 20px;
+    margin: 0;
+    mix-blend-mode: screen;
+    transition: all 500ms ease-in-out;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 3em;
+    opacity: 0.85;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95em;
+    :hover {
+      opacity: 0;
+    }
   }
 `
 
-const GalleryGridLink = styled(Link)`
-  color: #333333;
-  text-decoration: none;
-`
-
 const GalleryImage = styled(Img)`
-  object-fit: cover;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 `
 
 const GalleryList = ({ node }) => {
@@ -50,11 +69,14 @@ const GalleryList = ({ node }) => {
     console.log("extrawide")
   }
   return (
-    <GalleryListingItem gridColumn={aspectColumns} gridRow={aspectRows}>
-      <GalleryGridLink to={`/${node.slug}`}>
-        <GalleryImage fluid={node.image.fluid} alt={node.image.caption} />
-      </GalleryGridLink>
-    </GalleryListingItem>
+    <GalleryGridLink
+      to={`/${node.slug}`}
+      gridColumn={aspectColumns}
+      gridRow={aspectRows}
+    >
+      <GalleryImage fluid={node.image.fluid} alt={node.image.caption} />
+      <h2>{node.collection}</h2>
+    </GalleryGridLink>
   )
 }
 
